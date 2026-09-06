@@ -1,0 +1,16 @@
+name: Failing Pipeline Example
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Broken indentation and syntax error
+        run: |
+          echo "Starting build..."
+        # Incorrectly indented step attribute causing a parser crash
+        invalid_key:
+        - bad_list_item: [unclosed bracket
